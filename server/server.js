@@ -71,7 +71,11 @@ app.get('/cheese/:id', (req, res) => {     // this is not used in the app, but m
     }
 })
 
+app.use('/', (req, res) => {
+    res.json(`Welcome! Please visit this link to see the swagger: http://localhost:${port}/api-docs`)
+})
+
 // listen the port
 app.listen(port, () => {
-    console.log(`The server runs on port:${port}`);
+    console.log(`Backend: The server runs on port:${port}`);
 });
