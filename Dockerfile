@@ -4,6 +4,11 @@ WORKDIR /app/client
 COPY client/package*.json ./
 RUN npm install
 COPY client/ ./
+
+# Step 2: Client side 
+RUN npm test -- --watchAll=false
+
+# step 3: build the client
 RUN npm run build
 
 # Step 2: Build the Node.js backend
