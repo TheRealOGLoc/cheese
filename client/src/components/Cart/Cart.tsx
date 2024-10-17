@@ -16,7 +16,7 @@ export default function Cart() {
       <div className="flex flex-col">
 
         {
-          cart.map((item: CartType, index: number) => <CartItem cart={item} key={index} />)
+          cart.map((item: CartType, index: number) => <div data-testid="cart-item" key={index}><CartItem cart={item} key={index} /></div> )
         }
       </div>
       <div className="text-right text-3xl my-3">Total: {total.toFixed(2)}</div>

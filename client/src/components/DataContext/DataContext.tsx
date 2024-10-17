@@ -10,7 +10,7 @@ type CartContextType = {
   removeFromCart: (id: number) => void;
 };
 
-const DataContext = createContext<CartContextType | undefined>(undefined);
+export const DataContext = createContext<CartContextType | undefined>(undefined);
 
 export const CartProvider = ({ children }: { children: ReactNode }) => {
   const [cart, setCart] = useState<CartType[]>([]);

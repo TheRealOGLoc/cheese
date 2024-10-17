@@ -10,7 +10,7 @@ export default function Cheese() {
       {
         cheeses && cheeses.length !== 0 && 
         cheeses.map((cheese: CheeseType, index: number) => (
-          <CheeseCard key={index} cheese={cheese} />
+          <div data-testid="cheese-card" key={index}><CheeseCard key={index} cheese={cheese} /></div>
         ))
       }
     </div>
