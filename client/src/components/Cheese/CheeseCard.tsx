@@ -52,6 +52,8 @@ export default function CheeseCard({ cheese }: { cheese: CheeseType }) {
         <div>KG</div>
       </div>
       <div>Total Price: {(price * weight).toFixed(2)}</div>
+
+      {/* Use Google reCAPTCHA v3 to protect against automated bot attacks. */}
       <button
         className="bg-blue-500 text-white rounded px-4 py-2 mt-4"
         onClick={_handleAddToCart}

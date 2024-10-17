@@ -3,6 +3,10 @@ import { CheeseType } from "../types/types";
 // get all cheeses
 export async function getCheeses(): Promise<CheeseType[]> {
   try {
+
+    // Possible Persistence Mechanism
+    // Implement GraphQL to allow clients to request only the data they need, 
+    //improving performance and reducing bandwidth usage.
     const response = await fetch("http://localhost:5000/cheeses", {
       method: 'GET',
       headers: {

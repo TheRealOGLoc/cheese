@@ -6,6 +6,9 @@ const swaggerUi = require('swagger-ui-express');
 const swaggerJsdoc = require('swagger-jsdoc');
 const { cheeses } = require('./cheeses')
 
+// Possible Persistence Mechanism
+// Implement tokens for authentication, improve CORS settings, 
+// and use JWT (JSON Web Tokens) for secure session management.
 // server set up
 const port = 5000
 const app = express();
@@ -63,6 +66,10 @@ app.get('/cheeses', (req, res) => {
  */
 app.get('/cheese/:id', (req, res) => {     // this is not used in the app, but maybr useful in the future
     const id = Number(req.params.id);
+
+    // Possible Persistence Mechanism
+    // Store cheese data in a relational database like PostgreSQL or MySQL for structured data,
+    // or use a NoSQL database like MongoDB for more flexible data modeling.
     const cheese = cheeses.find( item => item.id === id )
     if (cheese) {
         res.status(200).json(cheese)
@@ -75,6 +82,10 @@ app.use('/', (req, res) => {
     res.json(`Welcome! Please visit this link to see the swagger: http://localhost:${port}/api-docs`)
 })
 
+
+// Possible Persistence Mechanism
+// Implement rate limiting to control the number of requests a client can make, 
+// reduce DDoS attack.
 // listen the port
 app.listen(port, () => {
     console.log(`Backend: The server runs on port:${port}`);

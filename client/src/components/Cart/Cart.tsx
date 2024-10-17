@@ -3,8 +3,10 @@ import { useData } from "../DataContext/DataContext"
 import CartItem from "./CartItem"
 
 export default function Cart() {
+  // Possible Persistence Mechanism
+  // Use LocalStorage/Cookie the store the cart data.
   const { cart, cheeses } = useData();
-  
+
   // calculate the total price
   const total = cart.reduce((acc, item) => {
     const cheese = cheeses.find((cheeseItem) => cheeseItem.id === item.id);
