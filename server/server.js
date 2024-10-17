@@ -1,3 +1,4 @@
+// require modules
 const express = require('express');
 const cors = require('cors');
 const logger = require('morgan');
@@ -5,11 +6,13 @@ const swaggerUi = require('swagger-ui-express');
 const swaggerJsdoc = require('swagger-jsdoc');
 const { cheeses } = require('./cheeses')
 
+// server set up
 const port = 5000
 const app = express();
 app.use(logger('dev'))
 app.use(cors());
 
+// swagger options
 const swaggerOptions = {
     swaggerDefinition: {
         info: {
@@ -21,6 +24,7 @@ const swaggerOptions = {
     apis: ['server.js'],
 };
 
+// set up the swagger router
 const swaggerDocs = swaggerJsdoc(swaggerOptions);
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
@@ -57,7 +61,7 @@ app.get('/cheeses', (req, res) => {
  *       404:
  *         description: Cheese with id not found
  */
-app.get('/cheese/:id', (req, res) => {
+app.get('/cheese/:id', (req, res) => {     // this is not used in the app, but maybr useful in the future
     const id = Number(req.params.id);
     const cheese = cheeses.find( item => item.id === id )
     if (cheese) {
@@ -67,6 +71,7 @@ app.get('/cheese/:id', (req, res) => {
     }
 })
 
+// listen the port
 app.listen(port, () => {
     console.log(`The server runs on port:${port}`);
 });
