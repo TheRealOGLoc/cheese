@@ -3,6 +3,7 @@ import {useData } from "../DataContext/DataContext";
 import CheeseCard from "./CheeseCard";
 
 export default function Cheese() {
+  // get all cheeses
   const { cheeses } = useData()
 
   return (

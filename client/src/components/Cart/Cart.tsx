@@ -4,6 +4,8 @@ import CartItem from "./CartItem"
 
 export default function Cart() {
   const { cart, cheeses } = useData();
+  
+  // calculate the total price
   const total = cart.reduce((acc, item) => {
     const cheese = cheeses.find((cheeseItem) => cheeseItem.id === item.id);
     if (cheese) {

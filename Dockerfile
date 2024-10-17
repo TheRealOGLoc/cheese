@@ -5,7 +5,7 @@ COPY client/package*.json ./
 RUN npm install
 COPY client/ ./
 
-# Step 2: Client side 
+# Step 2: Client side test
 RUN npm test -- --watchAll=false
 
 # step 3: build the client

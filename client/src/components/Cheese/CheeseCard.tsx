@@ -7,6 +7,7 @@ export default function CheeseCard({ cheese }: { cheese: CheeseType }) {
   const { id, name, price, color, description, imageUrl } = cheese;
   const [weight, setWeight] = useState<number>(0);
 
+  // update the weight
   const _handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     let value = parseFloat(e.target.value);
     if (!isNaN(value) && value >= 0) {
@@ -17,6 +18,7 @@ export default function CheeseCard({ cheese }: { cheese: CheeseType }) {
     }
   };
 
+  // add to the cart
   const _handleAddToCart = () => {
     if (weight > 0) {
       addToCart(id, weight)

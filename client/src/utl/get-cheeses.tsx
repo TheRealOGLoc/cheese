@@ -1,5 +1,6 @@
 import { CheeseType } from "../types/types";
 
+// get all cheeses
 export async function getCheeses(): Promise<CheeseType[]> {
   try {
     const response = await fetch("http://localhost:5000/cheeses", {

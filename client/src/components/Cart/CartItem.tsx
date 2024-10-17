@@ -4,7 +4,11 @@ import { useData } from "../DataContext/DataContext";
 export default function CartItem({ cart }: { cart: CartType }) {
   const { id, weight } = cart;
   const { cheeses, updateCart, removeFromCart } = useData();
+  
+  // find target cheese based on id
   const cheese = cheeses.find((item) => item.id === id);
+
+  // update the weight
   const _handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     let value = parseFloat(e.target.value);
     if (!isNaN(value) && value >= 0) {
