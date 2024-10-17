@@ -2,7 +2,12 @@ import { CheeseType } from "../types/types";
 
 export async function getCheeses(): Promise<CheeseType[]> {
   try {
-    const response = await fetch("http://localhost:5000/cheeses");
+    const response = await fetch("http://localhost:5000/cheeses", {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      }
+    });
 
     if (!response.ok) {
       throw new Error(`Error fetching cheeses: ${response.statusText}`);
