@@ -30,5 +30,4 @@ EXPOSE 3000
 EXPOSE 5000
 
 # Step 8: Run both frontend and backend
-RUN pwd
 CMD ["sh", "-c", "serve -s ../client/build -l 3000 & node server.js"]
