@@ -8,9 +8,7 @@ const { cheeses } = require('./cheeses')
 const port = 5000
 const app = express();
 app.use(logger('dev'))
-app.use(cors({
-    origin: 'http://localhost:3000'
-}));
+app.use(cors());
 
 const swaggerOptions = {
     swaggerDefinition: {
