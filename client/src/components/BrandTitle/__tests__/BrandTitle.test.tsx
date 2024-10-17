@@ -5,5 +5,5 @@ test("Should render the title", () => {
   render(<BrandTitle/>);
   const titleElement = screen.getByTestId("title-test-1");
   expect(titleElement).toBeInTheDocument();
-  expect(titleElement).toHaveTextContent("PZ Cheese!")
+  expect(titleElement).toHaveTextContent("PZ Cheeseria!!")
 });
