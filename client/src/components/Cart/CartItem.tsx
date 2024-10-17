@@ -20,7 +20,7 @@ export default function CartItem({ cart }: { cart: CartType }) {
   }
 
   return (
-    <div className="p-4 border-2 rounded-lg border-gray-300">
+    <div className="p-4 border-[1px] rounded-lg border-gray-300 hover:shadow-md hover:bg-slate-50 transition">
       {cheese && (
         <div className="flex justify-between items-center">
           <div className="text-lg font-bold w-[150px]">{cheese.name}</div>

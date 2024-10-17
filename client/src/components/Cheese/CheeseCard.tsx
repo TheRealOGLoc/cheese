@@ -28,7 +28,7 @@ export default function CheeseCard({ cheese }: { cheese: CheeseType }) {
   };
 
   return (
-    <div className="max-w-[400px] border p-4 rounded-lg m-2">
+    <div className="max-w-[400px] border p-4 rounded-lg m-2 hover:bg-slate-50 hover:shadow-md transition">
       <div className="relative">
         <img
           src={imageUrl}
@@ -51,7 +51,7 @@ export default function CheeseCard({ cheese }: { cheese: CheeseType }) {
         />
         <div>KG</div>
       </div>
-      <div>Total Price: {(price * weight).toFixed(2)}</div>
+      <div>Total Price: {(price * weight).toFixed(2)}$</div>
 
       {/* Use Google reCAPTCHA v3 to protect against automated bot attacks. */}
       <button

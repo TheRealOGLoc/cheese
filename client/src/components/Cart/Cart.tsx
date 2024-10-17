@@ -23,7 +23,7 @@ export default function Cart() {
           cart.map((item: CartType, index: number) => <div data-testid="cart-item" key={index}><CartItem cart={item} key={index} /></div> )
         }
       </div>
-      <div className="text-right text-3xl my-3">Total: {total.toFixed(2)}</div>
+      <div className="text-right text-3xl my-3">Total: {total.toFixed(2)}$</div>
     </div>
 
   )
