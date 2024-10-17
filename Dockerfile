@@ -22,13 +22,13 @@ COPY server/ ./
 # Step 5: test the backend
 RUN npm test
 
-# Step 3: copy the frontend build files into a target folder
+# Step 6: copy the frontend build files into a target folder
 COPY --from=client /app/client/build ../client/build
 
-# Step 4: Expose the ports
+# Step 7: Expose the ports
 EXPOSE 3000
 EXPOSE 5000
 
-# Step 5: Run both frontend and backend
+# Step 8: Run both frontend and backend
 RUN pwd
 CMD ["sh", "-c", "serve -s ../client/build -l 3000 & node server.js"]
