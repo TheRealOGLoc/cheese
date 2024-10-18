@@ -13,7 +13,7 @@ After cloning the repository, make sure to run the following commands:
 cd pz-cheese
 docker build -t cheese-app:v0.0.1 .
 ```
-Wait a few minutes for the build process to complete, and then run the following Docker command to start the app:
+Wait a few minutes for the test and build process to complete, and then run the following Docker command to start the app:
 ```
 docker run -p 3000:3000 -p 5000:5000 cheese-app:v0.0.1
 ```
@@ -34,6 +34,25 @@ Backend API Endpoints:
 ```
 http://localhost:5000/cheeses
 http://localhost:5000/cheese/:id
+```
+
+## Features and Explantion
+If you want to run the app without using the Docker:
+Go to server folder and run this command.
+```
+npm install
+node server.js
+```
+Then go to client folder and run this command.
+```
+npm install
+npm start
+```
+
+For testing, it is included in the Docker multi-stage build.
+If you want to manually test the frontend or backend, run this command in the server/client folder.
+```
+npm run test
 ```
 
 ## Possible Persistence Mechanism
